@@ -1,1 +1,6 @@
 streamlit
+mag4
+pandas
+matplotlib
+numpy
+requests
