@@ -7,6 +7,12 @@ st.title("Title")
 
 st.write('Hello World')
 
+df_mag4_available = mg.available_datasets()[['Source', 'Short Title', 'Title']]
+fil = df_mag4_available['Source'] == 'Georoc'
+df_georoc_datasets = df_mag4_available[fil]['Title'].tolist()
+
+locals = st.selectbox("Select Location",df_georoc_datasets,0)
+
 df = mg.get_data('bastcrat')
 
 xEl,yEl = df['Mg'],df['Si']
